@@ -11,7 +11,6 @@ This is a React application built with TypeScript and Vite that uses the Harry P
 - [Scripts](#scripts)
 - [Docker](#docker)
 - [Project Structure](#project-structure)
-- [License](#license)
 
 ## Features
 
