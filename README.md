@@ -20,7 +20,6 @@ This is a React application built with TypeScript and Vite that uses the Harry P
 - View details of a selected character
 - Favorite characters
 - Set preferred house (Gryffindor, Slytherin, Hufflepuff, Ravenclaw)
-- Aesthetic use of colors and fonts
 
 ## Requirements
 
