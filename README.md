@@ -1,6 +1,6 @@
 # Harry Potter Mischief Managed App
 
-This is a React application built with TypeScript and Vite that uses the Harry Potter API to display a list of characters and spells. The app allows users to view all characters, students, and staff, navigate between views, favorite characters, and set their preferred house.
+This is a React application built with TypeScript and Vite that uses the Harry Potter API to display a list of characters. The app allows users to view all characters, students, and staff, navigate between views, favorite characters, and set their preferred house.
 
 ## Table of Contents
 
