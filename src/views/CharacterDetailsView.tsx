@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import {
   Box,
@@ -20,6 +20,13 @@ import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { useFavorites } from "../hooks/useFavorites";
 import { House } from "../types";
 
+const DetailItem = ({ label, value }: { label: string; value: string }) => (
+  <GridItem>
+    <Text fontWeight="bold">{label}:</Text>
+    <Text>{value}</Text>
+  </GridItem>
+);
+
 const CharacterDetailsView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { data: characterData, isLoading, error } = useCharacter(id || "");
@@ -31,8 +38,10 @@ const CharacterDetailsView: React.FC = () => {
     return <Box textAlign="center">Character not found</Box>;
 
   const character = characterData[0];
-  console.log("getHouseColors(character.house as House).primary");
-  console.log(getHouseColors(character.house as House).primary.split(".")[0]);
+
+  const houseColors = useMemo(() => {
+    return character ? getHouseColors(character.house as House) : null;
+  }, [character]);
 
   const toggleFavorite = () => {
     if (isFavorite(character.id)) {
@@ -41,14 +50,6 @@ const CharacterDetailsView: React.FC = () => {
       addFavorite(character.id);
     }
   };
-
-  const DetailItem = ({ label, value }: { label: string; value: string }) => (
-    <GridItem>
-      <Text fontWeight="bold">{label}:</Text>
-      <Text>{value}</Text>
-    </GridItem>
-  );
-  console.log(character);
 
   return (
     <Container maxW="container.md" py={8}>
@@ -83,12 +84,7 @@ const CharacterDetailsView: React.FC = () => {
             </Button>
           </Flex>
           {character.house && (
-            <Badge
-              colorScheme={
-                getHouseColors(character.house as House).primary.split(".")[0]
-              }
-              mt={2}
-            >
+            <Badge colorScheme={houseColors?.primary?.split(".")[0]} mt={2}>
               {character.house}
             </Badge>
           )}
