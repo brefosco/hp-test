@@ -1,4 +1,4 @@
-# Harry Potter Mischief Managed App
+# Harry Potter Managed App
 
 This is a React application built with TypeScript and Vite that uses the Harry Potter API to display a list of characters. The app allows users to view all characters, students, and staff, navigate between views, favorite characters, and set their preferred house.
 
@@ -10,15 +10,13 @@ This is a React application built with TypeScript and Vite that uses the Harry P
 - [Usage](#usage)
 - [Scripts](#scripts)
 - [Docker](#docker)
-- [Project Structure](#project-structure)
 
 ## Features
 
 - Display a list of all characters, students, and staff
-- Navigate between different views
 - View details of a selected character
 - Favorite characters
-- Set preferred house (Gryffindor, Slytherin, Hufflepuff, Ravenclaw)
+- Set preferred house
 
 ## Requirements
 
@@ -70,7 +68,3 @@ To run the project using Docker:
 
 3. Open your browser and navigate to `http://localhost:3000`.
 
-## Project Structure
-
-### 
-This project can be run with `docker run -p 3000:3000 hp-test:v1.0`
